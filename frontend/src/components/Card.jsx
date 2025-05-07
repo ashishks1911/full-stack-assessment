@@ -6,8 +6,8 @@ import { toast } from 'react-toastify';
 const Card = ({ product }) => {
   const navigate = useNavigate();
   return (
-    <div className='w-[200px] shadow-lg rounded-lg cursor-pointer'>
-      <div className='p-1 relative h-60' onClick={() => navigate(`/${product.id}`)}>
+    <div className='md:w-[200px] w-[260px] shadow-lg rounded-lg cursor-pointer'>
+      <div className='p-1 relative md:h-60 h-72' onClick={() => navigate(`/${product.id}`)}>
         <img src={api.defaults.baseURL + product.imageUrl} alt="" className='h-full w-full' />
         <span className='absolute top-3 left-2 text-xs bg-white text-red-800 font-bold rounded-2xl px-1'>{product.category}</span>
       </div>

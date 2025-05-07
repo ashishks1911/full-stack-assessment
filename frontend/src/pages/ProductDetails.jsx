@@ -29,13 +29,13 @@ const ProductDetails = () => {
     );
   }
   return (
-    <div className='ml-26 mt-14'>
+    <div className='md:ml-26 mt-14 mx-8'>
       <div className='my-3'>
         <Link to={'/'}>
           <IoArrowBack className='w-12 h-12' />
         </Link>
       </div>
-      <div className='grid grid-cols-2 w-[50%] h-[400px] gap-4 shadow-lg p-2'>
+      <div className='grid md:grid-cols-2 grid-rows-2 md:w-[50%] h-[400px] gap-4 shadow-lg p-2'>
         <div className='overflow-hidden'>
           <img src={api.defaults.baseURL + product.imageUrl} alt="" className='h-full w-full' />
         </div>

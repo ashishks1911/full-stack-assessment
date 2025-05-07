@@ -27,7 +27,7 @@ const ProductList = () => {
         isLoading ? <Loader/>
           : <>
 
-            <div className='flex gap-4 justify-start flex-wrap'>
+            <div className='flex gap-4 md:justify-start justify-center flex-wrap'>
               {
                 state.map((product, index) => (
                   <Card product={product} key={index} />
