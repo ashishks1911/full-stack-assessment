@@ -10,7 +10,7 @@ export async function getAllProducts() {
     return response.data;
   }
   catch (error) {
-    throw new error("Error fetching products");
+    throw new Error("Error fetching products");
   }
 }
 
@@ -20,7 +20,7 @@ export async function searchProductsInDB(query) {
     return response.data;
   }
   catch (error) {
-    throw new error("Error fetching products");
+    throw new Error("Error fetching products");
   }
 }
 
@@ -30,7 +30,7 @@ export async function findProductById(id) {
     return response.data;
   }
   catch (error) {
-    throw new error("Product not found");
+    throw new Error("Product not found");
   }
 }
 

@@ -16,14 +16,13 @@ const ProductList = () => {
       setState(data);
       setIsLoading(false);
     }).catch((error) => {
-      toast.error(error);
+      toast.error(error.message);
     })
 
   }, [])
 
   return (
     <div className='m-12'>
-      {console.log(state)}
       {
         isLoading ? <Loader/>
           : <>

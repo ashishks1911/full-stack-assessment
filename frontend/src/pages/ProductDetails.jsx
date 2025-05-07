@@ -6,22 +6,28 @@ import { toast } from 'react-toastify';
 
 const ProductDetails = () => {
   const [product, setProduct] = useState({});
-
   const { id } = useParams();
-  console.log(id);
-
+  const [errorMessage, setErrorMessage] = useState();
 
   useEffect(() => {
     findProductById(id).then((data) => {
       setProduct(data)
-      console.log(data)
     }).catch((error) => {
-      toast.error(error);
+      toast.error(error.message);
+      setErrorMessage(error.message);
     })
 
   })
 
-
+  if (errorMessage) {
+    return (
+      <div className='my-3'>
+        <Link to={'/'}>
+          <IoArrowBack className='w-12 h-12' />
+        </Link>
+      </div>
+    );
+  }
   return (
     <div className='ml-26 mt-14'>
       <div className='my-3'>
@@ -38,7 +44,8 @@ const ProductDetails = () => {
           <h2 className='text-xl text-gray-500'>{product.description}</h2>
           <h1 className='text-4xl my-6'>₹ {product.price}</h1>
           <div className='absolute bottom-3'>
-            <button className='p-3 font-bold text-2xl bg-amber-500 text-white rounded-md'>Add to Cart</button>
+            <button className='p-3 font-bold text-2xl bg-amber-500 text-white rounded-md'
+              onClick={() => { toast.info("Work in progress...") }}>Add to Cart</button>
           </div>
         </div>
       </div>
