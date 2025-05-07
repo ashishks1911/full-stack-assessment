@@ -7,7 +7,7 @@ import SearchBox from './SearchBox';
 const Header = () => {
 
   return (
-    <div className='bg-emerald-700 flex justify-evenly px-12 w-full'>
+    <div className='bg-emerald-700 flex justify-evenly items-center px-12 w-full'>
       <div>
         {/* <img src="#" alt="" /> */}
         <Link to={"/"} className='text-2xl md:w-70 p-3 font-bold text-yellow-300 cursor-pointer'>SpendTechShop</Link>
