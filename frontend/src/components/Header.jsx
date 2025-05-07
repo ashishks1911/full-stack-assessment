@@ -10,7 +10,7 @@ const Header = () => {
     <div className='bg-emerald-700 flex justify-evenly px-12 w-full'>
       <div>
         {/* <img src="#" alt="" /> */}
-        <h1 className='text-2xl md:w-70 p-3 font-bold text-yellow-300'>SpendTechShop</h1>
+        <Link to={"/"} className='text-2xl md:w-70 p-3 font-bold text-yellow-300 cursor-pointer'>SpendTechShop</Link>
       </div>
       <div className='lg:block hidden'>
       <SearchBox />
