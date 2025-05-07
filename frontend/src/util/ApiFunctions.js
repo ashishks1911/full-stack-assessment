@@ -23,3 +23,14 @@ export async function searchProductsInDB(query) {
     throw new error("Error fetching products");
   }
 }
+
+export async function findProductById(id) {
+  try {
+    const response = await api.get(`/products/${id}`);
+    return response.data;
+  }
+  catch (error) {
+    throw new error("Product not found");
+  }
+}
+

@@ -3,6 +3,7 @@ import { getAllProducts } from '../util/ApiFunctions'
 import { toast } from 'react-toastify';
 import Card from './Card';
 import { SearchContext } from '../context/SearchContext';
+import Loader from './Loader';
 
 const ProductList = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -24,7 +25,7 @@ const ProductList = () => {
     <div className='m-12'>
       {console.log(state)}
       {
-        isLoading ? <p>"Loading Products..."</p>
+        isLoading ? <Loader/>
           : <>
 
             <div className='flex gap-4 justify-start flex-wrap'>

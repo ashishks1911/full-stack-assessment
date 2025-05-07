@@ -1,6 +1,8 @@
 import React, { useContext } from 'react'
 import { data, Link } from 'react-router-dom'
 import { searchProductsInDB } from '../util/ApiFunctions'
+import { IoCartOutline } from "react-icons/io5";
+import { CgProfile } from "react-icons/cg";
 import { SearchContext } from '../context/SearchContext'
 import { toast } from 'react-toastify'
 
@@ -35,8 +37,8 @@ const Header = () => {
         </nav>
 
         <div className='flex gap-4 ml-16 p-3'>
-          <Link to={"/"}>Cart</Link>
-          <Link to={"/"}>Account</Link>
+          <Link to={"/"}><IoCartOutline className='w-6 h-6'/></Link>
+          <Link to={"/"}><CgProfile className='w-6 h-6'/></Link>
         </div>
       </div>
     </div>

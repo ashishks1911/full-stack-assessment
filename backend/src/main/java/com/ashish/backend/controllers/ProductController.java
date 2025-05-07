@@ -8,6 +8,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
 
 @RestController
 @CrossOrigin("*")
@@ -24,6 +26,16 @@ public class ProductController {
         }
         List<Product> productList = productService.findAllProducts();
         return ResponseEntity.status(HttpStatus.OK).body(productList);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Product> findProductById(@PathVariable UUID id){
+        Optional<Product> product = productService.findById(id);
+        System.out.println(product);
+        if (product.isPresent()) {
+            return ResponseEntity.ok(product.get());
+        }
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
     }
 
 

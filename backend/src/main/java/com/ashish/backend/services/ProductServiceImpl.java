@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
 
 @Service
 public class ProductServiceImpl implements ProductService{
@@ -20,5 +22,10 @@ public class ProductServiceImpl implements ProductService{
     @Override
     public List<Product> searchProducts(String search) {
         return productRepository.findByNameContainingIgnoreCase(search);
+    }
+
+    @Override
+    public Optional<Product> findById(UUID id) {
+        return productRepository.findById(id);
     }
 }
