@@ -29,22 +29,22 @@ const ProductDetails = () => {
     );
   }
   return (
-    <div className='md:ml-26 mt-14 mx-8'>
+    <div className='lg:ml-26 mt-12 mx-8'>
       <div className='my-3'>
         <Link to={'/'}>
           <IoArrowBack className='w-12 h-12' />
         </Link>
       </div>
-      <div className='grid md:grid-cols-2 grid-rows-2 md:w-[50%] h-[400px] gap-4 shadow-lg p-2'>
+      <div className='grid lg:grid-cols-2 grid-rows-[65%_35%] sm:grid-rows-none  lg:w-[50%] md:h-[820px] lg:h-[65%] h-[50%] gap-4 shadow-lg p-2'>
         <div className='overflow-hidden'>
           <img src={api.defaults.baseURL + product.imageUrl} alt="" className='h-full w-full' />
         </div>
-        <div className='relative'>
-          <h1 className='text-3xl font-bold py-2'>{product.name}</h1>
+        <div className='relative py-3 md:m-2'>
+          <h1 className='md:text-3xl text-2xl font-bold md:py-2'>{product.name}</h1>
           <h2 className='text-xl text-gray-500'>{product.description}</h2>
-          <h1 className='text-4xl my-6'>₹ {product.price}</h1>
-          <div className='absolute bottom-3'>
-            <button className='p-3 font-bold text-2xl bg-amber-500 text-white rounded-md'
+          <h1 className='md:text-4xl md:my-6 text-2xl'>₹ {product.price}</h1>
+          <div className='absolute bottom-4'>
+            <button className='p-3 font-bold md:text-2xl text-lg bg-amber-500 text-white rounded-lg'
               onClick={() => { toast.info("Work in progress...") }}>Add to Cart</button>
           </div>
         </div>

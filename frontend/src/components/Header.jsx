@@ -12,7 +12,7 @@ const Header = () => {
         {/* <img src="#" alt="" /> */}
         <h1 className='text-2xl md:w-70 p-3 font-bold text-yellow-300'>SpendTechShop</h1>
       </div>
-      <div className='md:block hidden'>
+      <div className='lg:block hidden'>
       <SearchBox />
       </div>
       <div className='text-amber-50 flex justify-between items-center uppercase font-semibold'>
@@ -22,7 +22,7 @@ const Header = () => {
           <Link to={"/"} >About</Link>
           <Link to={"/"} >Contact</Link>
         </nav>
-        <div className='flex gap-4 ml-16 py-3'>
+        <div className='flex gap-4 lg:ml-16 ml-5 py-3'>
           <Link to={"/"}><IoCartOutline className='w-6 h-6' /></Link>
           <Link to={"/"}><CgProfile className='w-6 h-6' /></Link>
         </div>
