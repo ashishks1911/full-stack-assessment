@@ -13,3 +13,13 @@ export async function getAllProducts() {
     throw new error("Error fetching products");
   }
 }
+
+export async function searchProductsInDB(query) {
+  try {
+    const response = await api.get(`/products?search=${query}`);
+    return response.data;
+  }
+  catch (error) {
+    throw new error("Error fetching products");
+  }
+}

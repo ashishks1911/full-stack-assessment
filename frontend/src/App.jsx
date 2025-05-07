@@ -6,18 +6,19 @@ import Header from './components/Header'
 import { Outlet } from 'react-router-dom'
 import { ToastContainer } from 'react-toastify'
 import Footer from './components/Footer'
+import SearchState from './context/SearchContext'
 
 function App() {
 
   return (
-    <>
+    <SearchState>
       <Header />
       <main className='min-h-screen'>
         <ToastContainer />
         <Outlet />
       </main>
       <Footer />
-    </>
+    </SearchState>
   )
 }
 

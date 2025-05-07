@@ -1,16 +1,18 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { getAllProducts } from '../util/ApiFunctions'
 import { toast } from 'react-toastify';
 import Card from './Card';
+import { SearchContext } from '../context/SearchContext';
 
 const ProductList = () => {
-  const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+
+  const {state, setState} = useContext(SearchContext);
 
   useEffect(() => {
     setIsLoading(true);
     getAllProducts().then((data) => {
-      setProducts(data);
+      setState(data);
       setIsLoading(false);
     }).catch((error) => {
       toast.error(error);
@@ -20,14 +22,14 @@ const ProductList = () => {
 
   return (
     <div className='m-12'>
-      {console.log(products)}
+      {console.log(state)}
       {
         isLoading ? <p>"Loading Products..."</p>
           : <>
 
-            <div className='flex gap-2 justify-start'>
+            <div className='flex gap-4 justify-start flex-wrap'>
               {
-                products.map((product, index) => (
+                state.map((product, index) => (
                   <Card product={product} key={index} />
                 ))
               }
